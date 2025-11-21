@@ -1,20 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerador de Frases Motivacionais</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4b2aff, #8f68ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            width: 90%;
+            max-width: 480px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        #frase {
+            font-size: 20px;
+            font-weight: 500;
+            min-height: 60px;
+        }
+
+        button {
+            margin-top: 25px;
+            background: #ffffff;
+            color: #4b2aff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        button:hover {
+            transform: scale(1.07);
+            background: #ebe3ff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>✨ Frase Motivacional do Dia ✨</h1>
-        <p id="frase">Clique no botão para gerar uma frase</p>
-        <button onclick="gerarFrase()">Gerar Frase</button>
+        <h1>✨ Gerador de Frases Motivacionais</h1>
+        <p id="frase">Clique no botão para gerar uma nova frase!</p>
+        <button onclick="gerarFrase()">Gerar frase</button>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const frases = [
+            "Acredite no seu potencial e vá além! 🚀",
+            "Cada passo te aproxima do seu sonho. ✨",
+            "Você é mais forte do que imagina! 💪",
+            "Grandes jornadas começam com um simples passo. 🌟",
+            "Seu futuro depende do que você faz hoje! 🔥",
+            "Persistência transforma sonhos em realidade. 🌱",
+            "A disciplina te leva onde a motivação não sustenta. ⚡"
+        ];
+
+        function gerarFrase() {
+            const indice = Math.floor(Math.random() * frases.length);
+            document.getElementById("frase").textContent = frases[indice];
+        }
+    </script>
 </body>
 </html>
+
 
